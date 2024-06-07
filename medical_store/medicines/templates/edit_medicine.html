@@ -1,0 +1,17 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}
+    Edit Medicine
+{% endblock %}
+
+{% block content %}
+    <h1>Edit Medicine</h1>
+    <form action="{% url 'edit_medicine' medicine_id=medicine.id %}" method="post">
+
+
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save">
+    </form>
+    <a href="{% url 'list_medicines' %}">Cancel</a>
+{% endblock %}

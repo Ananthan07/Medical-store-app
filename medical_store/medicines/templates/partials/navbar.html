@@ -1,0 +1,12 @@
+<nav>
+    <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'list_medicines' %}">List Medicines</a></li>
+        <li><a href="{% url 'add_medicine' %}">Add Medicine</a></li>
+        <li><a href="{% url 'search_medicine' %}">Search Medicine</a></li>
+        <li><a href="{% url 'login' %}">Login</a></li>
+        <li><a href="{% url 'signup' %}">Sign Up</a></li>
+        <li><a href="{% url 'edit_medicine' medicine_id=2 %}">Edit Medicine</a></li>
+        <li><a href="{% url 'delete_medicine' id=3 %}">Delete Medicine</a></li>
+    </ul>
+</nav>

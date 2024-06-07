@@ -1,0 +1,20 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}
+    Delete Medicine
+{% endblock %}
+
+{% block content %}
+    <h1>Delete Medicine</h1>
+    <p>Are you sure you want to delete the following medicine?</p>
+    <p>Name: {{ medicine.name }}</p>
+    <p>Description: {{ medicine.description }}</p>
+    <p>Price: {{ medicine.price }}</p>
+    <form action="{% url 'delete_medicine' id=medicine.id %}" method="post">
+
+
+        {% csrf_token %}
+        <input type="submit" value="Delete">
+    </form>
+    <a href="{% url 'list_medicines' %}">Cancel</a>
+{% endblock %}

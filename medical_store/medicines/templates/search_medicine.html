@@ -1,0 +1,17 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+    <h2>Search Medicine</h2>
+    <form method="get">
+        <input type="text" name="query" placeholder="Search...">
+        <button type="submit">Search</button>
+    </form>
+    <h3>Search Results for "{{ query }}"</h3>
+    <ul>
+        {% for medicine in medicines %}
+        <li>{{ medicine.name }}</li>
+        {% empty %}
+        <li>No results found</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
